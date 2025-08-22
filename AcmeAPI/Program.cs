@@ -10,6 +10,7 @@ builder.Services.AddDbContext<AcmeDbContext>(options => options.UseSqlServer(bui
 
 // Add services to the container.
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<ITipoRepository, TipoRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

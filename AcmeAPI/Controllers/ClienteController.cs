@@ -35,7 +35,10 @@ namespace AcmeAPI.Controllers
                     Cpf = cliente.Cpf,
                     DataNascimento = cliente.DataNascimento,
                     Email = cliente.Email,
-                    Telefone = cliente.Telefone
+                    Telefone = cliente.Telefone,
+                    IdTipo = cliente.IdTipo,
+                    Tipo = cliente.Tipo.Nome
+
                 });
             }
 
@@ -56,7 +59,9 @@ namespace AcmeAPI.Controllers
                 Cpf = cliente.Cpf,
                 DataNascimento = cliente.DataNascimento,
                 Email = cliente.Email,
-                Telefone = cliente.Telefone
+                Telefone = cliente.Telefone,
+                IdTipo = cliente.IdTipo,
+                Tipo = cliente.Tipo.Nome
             };
 
             return Ok(resultado);
@@ -73,7 +78,8 @@ namespace AcmeAPI.Controllers
                 Cpf = dto.Cpf,
                 DataNascimento = dto.DataNascimento,
                 Email = dto.Email,
-                Telefone = dto.Telefone
+                Telefone = dto.Telefone,
+                IdTipo = dto.IdTipo
             };
 
             await _clienteRepository.AddAsync(cliente);
@@ -92,7 +98,8 @@ namespace AcmeAPI.Controllers
                 Cpf = dto.Cpf,
                 DataNascimento = dto.DataNascimento,
                 Email = dto.Email,
-                Telefone = dto.Telefone
+                Telefone = dto.Telefone,
+                IdTipo = dto.IdTipo,
             };
 
             await _clienteRepository.UpdateAsync(cliente);

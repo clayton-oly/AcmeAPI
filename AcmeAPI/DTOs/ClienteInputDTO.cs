@@ -20,5 +20,8 @@ namespace AcmeAPI.DTOs
 
         [Phone(ErrorMessage = "Telefone inválido")]
         public string Telefone { get; set; }
+
+        [Required(ErrorMessage = "Id Tipo é obrigatorio")]
+        public int IdTipo { get; set; }
     }
 }

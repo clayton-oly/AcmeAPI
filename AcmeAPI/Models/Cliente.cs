@@ -28,5 +28,9 @@ namespace AcmeAPI.Models
         [Required]
         [StringLength(20)]
         public string Telefone { get; set; }
+
+        //foreign key Tipo de Cliente
+        public int IdTipo { get; set; }
+        public Tipo? Tipo { get; set; }
     }
 }
