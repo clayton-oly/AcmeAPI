@@ -36,7 +36,7 @@ namespace AcmeAPI.Controllers
                     DataNascimento = cliente.DataNascimento,
                     Email = cliente.Email,
                     Telefone = cliente.Telefone,
-                    IdTipo = cliente.IdTipo,
+                    IdTipo = cliente.TipoId,
                     Tipo = cliente.Tipo.Nome
 
                 });
@@ -60,7 +60,7 @@ namespace AcmeAPI.Controllers
                 DataNascimento = cliente.DataNascimento,
                 Email = cliente.Email,
                 Telefone = cliente.Telefone,
-                IdTipo = cliente.IdTipo,
+                IdTipo = cliente.TipoId,
                 Tipo = cliente.Tipo.Nome
             };
 
@@ -79,7 +79,7 @@ namespace AcmeAPI.Controllers
                 DataNascimento = dto.DataNascimento,
                 Email = dto.Email,
                 Telefone = dto.Telefone,
-                IdTipo = dto.IdTipo
+                TipoId = dto.IdTipo
             };
 
             await _clienteRepository.AddAsync(cliente);
@@ -99,7 +99,7 @@ namespace AcmeAPI.Controllers
                 DataNascimento = dto.DataNascimento,
                 Email = dto.Email,
                 Telefone = dto.Telefone,
-                IdTipo = dto.IdTipo,
+                TipoId = dto.IdTipo,
             };
 
             await _clienteRepository.UpdateAsync(cliente);

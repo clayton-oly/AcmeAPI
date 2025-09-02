@@ -43,9 +43,6 @@ namespace AcmeAPI.Migrations
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)");
 
-                    b.Property<int>("IdTipo")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -55,7 +52,7 @@ namespace AcmeAPI.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("TipoId")
+                    b.Property<int>("TipoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -87,7 +84,9 @@ namespace AcmeAPI.Migrations
                 {
                     b.HasOne("AcmeAPI.Models.Tipo", "Tipo")
                         .WithMany()
-                        .HasForeignKey("TipoId");
+                        .HasForeignKey("TipoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Tipo");
                 });

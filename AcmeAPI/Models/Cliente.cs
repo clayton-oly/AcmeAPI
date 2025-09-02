@@ -30,7 +30,7 @@ namespace AcmeAPI.Models
         public string Telefone { get; set; }
 
         //foreign key Tipo de Cliente
-        public int IdTipo { get; set; }
+        public int TipoId { get; set; }
         public Tipo? Tipo { get; set; }
     }
 }

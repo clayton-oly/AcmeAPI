@@ -17,13 +17,13 @@ namespace AcmeAPI.Repositories
         public async Task<List<Cliente>> GetAllAsync()
         {
             //listar todos registros
-            return await _context.Clientes.ToListAsync();
+            return await _context.Clientes.Include(c => c.Tipo).ToListAsync();
         }
 
         public async Task<Cliente?> GetByIdAsync(int id)
         {
             //selecione os registro por id
-            return await _context.Clientes.FirstOrDefaultAsync(c => c.Id == id);
+            return await _context.Clientes.Include(c => c.Tipo).FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task AddAsync(Cliente cliente)
