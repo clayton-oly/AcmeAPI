@@ -1,12 +1,14 @@
 ﻿using AcmeAPI.DTOs;
 using AcmeAPI.Interfaces;
 using AcmeAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AcmeAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioRepository _usuarioRepository;
